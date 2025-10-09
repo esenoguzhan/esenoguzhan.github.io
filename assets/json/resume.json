@@ -1,200 +1,168 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Oğuzhan Eşen",
+    "label": "Electrical Engineer & M.Sc. Student",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "ogguzhanesen@gmail.com",
+    "phone": "+49 15258975738",
+    "url": "",
+    "summary": "Electrical Engineer with 3+ years of professional experience, currently pursuing an M.Sc. in Mechatronics & Robotics at TUM; interests include software, AI, and control for cyber-physical systems.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "",
+      "postalCode": "",
+      "city": "Munich",
+      "countryCode": "DE",
+      "region": "Bavaria"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "LinkedIn",
+        "username": "oguzhanesen",
+        "url": "https://linkedin.com/in/oguzhanesen"
       }
     ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
+      "name": "AVL Software and Functions",
+      "position": "Working Student — BMS ASW Team",
+      "url": "",
+      "startDate": "2024-11-01",
+      "endDate": "",
+      "location": "Munich, Germany",
+      "summary": "I have transitioned to a part-time role, continuing my responsibilities from my previous full-time position as part of the BMS ASW Team at the AVL Munich branch after I started my master's education.",
+      "highlights": []
+    },
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "name": "AVL",
+      "position": "Control Development Engineer",
+      "url": "",
+      "startDate": "2022-04-01",
+      "endDate": "2024-10-01",
+      "location": "Istanbul, Turkey",
+      "summary": "",
+      "highlights": [
+        "Actively worked on model-based control software development projects for diverse applications including electric vehicles, hybrid systems, autonomous robotics, and e-mobility platforms in battery domain.",
+        "Designed and implemented application-layer software using MATLAB/Simulink in accordance with ASPICE and MISRA compliance standards.",
+        "Developed and maintained control functions and algorithms for BMS modules such as battery protection, thermal management, electrical hazard protection, contactor control, isolation measurement, cranking capability estimation, diagnostics, warranty management, thermal runaway detection, and vehicle communication.",
+        "Executed Model-in-the-Loop (MiL) and Software-in-the-Loop (SiL) testing; actively supported Hardware-in-the-Loop (HiL) integration and validation processes.",
+        "Requirement management and test management on component level",
+        "Participated in the definition and enhancement of software architecture, ensuring modularity, reusability, and integration with broader system platforms.",
+        "Developed a battery model calibration tool using Python and SciPy to optimize cell model parameters.",
+        "Implemented deep learning algorithm prototypes for SOX estimation",
+        "Collaborated closely with cross-functional teams from various disciplines and different AVL locations worldwide."
+      ]
+    },
+    {
+      "name": "Siemens",
+      "position": "Working Student",
+      "url": "",
+      "startDate": "2021-05-01",
+      "endDate": "2022-04-01",
+      "location": "Gebze, Turkey",
+      "summary": "",
+      "highlights": [
+        "Supporting after-sales operations and customer incident solutions.",
+        "Troubleshooting of non-conformities in high and low voltage switchgears, busbars, circuit breakers and protection elements from both electrical and mechanical perspective.",
+        "Coordinating different stakeholders and subject matter experts at different disciplines of operations.",
+        "Tracking and reporting continuously non-conformities of after sales scope in order to improve quality requirements."
+      ]
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "Technical University of Munich (TUM)",
+      "location": "Munich, Germany",
+      "url": "",
+      "area": "Mechatronics and Robotics",
+      "studyType": "M.Sc.",
+      "startDate": "2024-10-01",
+      "endDate": "",
+      "score": "",
+      "courses": [
+        "Optimal Control and Decision Making",
+        "Multidisciplinary Design Optimization",
+        "Adaptive and Learning-based Control",
+        "Software Design for Cyber-Physical Systems",
+        "Reinforcement Learning for Biomechanics",
+        "Introduction to ROS",
+        "Mobile Robotics"
+      ],
+      "summary": "Graduate studies focused on intelligent control and robotics within cyber-physical systems."
+    },
+    {
+      "institution": "Yıldız Technical University",
+      "location": "Istanbul, Turkey",
+      "url": "",
+      "area": "Electrical Engineering",
+      "studyType": "B.Sc.",
+      "startDate": "2018-01-01",
+      "endDate": "2022-01-01",
+      "score": "GPA 3.57/4.0 (German equiv. 1.6)",
+      "courses": [],
+      "summary": "Bachelor’s degree in Electrical Engineering."
     }
   ],
-  "awards": [
+  "projects": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
+      "name": "Autonomous Driving using ROS",
+      "summary": "Built a ROS-based system with perception, planning, and control for autonomous driving.",
+      "highlights": [],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
+      "name": "Mobile Robot Development for Intralogistics",
+      "summary": "Implemented kinematics, perception, control, navigation, and localization modules for a Raspberry Pi–based mobile robot in Python as part of Mobile Robotics Laboratory; integrated PID control, Dijkstra path planning, OpenCV object detection, and multi-sensor inputs (camera, ultrasonic, color).",
+      "highlights": [],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
+      "name": "Humanoid Gait Imitation with Reinforcement Learning",
+      "summary": "Developed a reinforcement learning framework to train a MuJoCo humanoid model for human-like walking. Integrated OpenSim inverse kinematics into the reward function to guide motion imitation based on real motion capture data.",
+      "highlights": [],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
     },
     {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Embedded Ball Control using PD controller on dsPIC33F",
+      "summary": "Implemented a PD controller on dsPIC33F microcontroller to achieve circular ball following, actuated with 2 servo motors.",
+      "highlights": [],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Programming & Tools",
+      "level": "",
+      "icon": "",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Python",
+        "MATLAB & Simulink",
+        "C++",
+        "Git",
+        "Object-Oriented Programming",
+        "Linux",
+        "ROS"
       ]
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
       "language": "English",
-      "fluency": "Fluent",
+      "fluency": "C1 (IELTS 7.0)",
       "icon": ""
-    }
-  ],
-  "interests": [
-    {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "language": "Turkish",
+      "fluency": "Native",
+      "icon": ""
     }
   ]
 }

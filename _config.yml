@@ -2,21 +2,20 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
-first_name: You
-middle_name: R.
-last_name: Name
+title: Oguzhan Esen # the website title (if blank, full name will be used instead)
+first_name: Oguzhan
+middle_name: >
+last_name: Esen
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  You can reach out to me via e-mail!
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Oguzhan Esen personal web site.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: robotics engineer, robotics learning engineer # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: 🤖 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://esenoguzhan.github.io/ # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -86,7 +85,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Oguzhan Esen | Robotics & AI # blog_name will be displayed in your blog page
+blog_name: Oguzhan Esen # blog_name will be displayed in your blog page
 blog_description: Oguzhan Esen personal web site.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
@@ -195,6 +194,12 @@ exclude:
   - _pages/404
   - _pages/books
   - _pages/publications
+  - _pages/teaching
+  - _pages/dropdown
+  - _pages/news
+  - _pages/profiles
+  - _pages/repositories
+  - _pages/blog
 keep_files:
   - CNAME
   - .nojekyll
