@@ -86,8 +86,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Oguzhan Esen | Robotics & AI # blog_name will be displayed in your blog page
+blog_description: Oguzhan Esen personal web site.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -192,6 +192,9 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _pages/404
+  - _pages/books
+  - _pages/publications
 keep_files:
   - CNAME
   - .nojekyll
