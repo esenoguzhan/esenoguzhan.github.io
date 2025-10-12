@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "Mainly containing the term projects during my master studies.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -402,51 +402,21 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-humanoid-modeling-using-real-gait-data",
+          title: 'Humanoid Modeling Using Real Gait Data',
+          description: "Train a humanoid robot to imitate human gait by using MuJoCo, Opensim, dm_control and Stable Baselines-3.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+              window.location.href = "/projects/humanoid_gate_imitation/";
+            },},{id: "projects-mobile-robotics-lab-intralogistics-challenge",
+          title: 'Mobile Robotics Lab – Intralogistics Challenge',
+          description: "Autonomous mobile robot for intralogistics using Dijkstra path planning and OpenCV detection",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+              window.location.href = "/projects/mobile_robotics_intralogistics/";
+            },},{id: "projects-ros-based-autonomous-driving",
+          title: 'ROS-Based Autonomous Driving',
+          description: "A modular ROS-based autonomous driving system developed for the Introduction to ROS course at TUM, integrating perception, planning, decision-making, and control.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/ros_autonomous_driving_project/";
             },},{
         id: 'social-email',
         title: 'email',
