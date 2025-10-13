@@ -86,7 +86,8 @@
         "Software Design for Cyber-Physical Systems",
         "Reinforcement Learning for Biomechanics",
         "Introduction to ROS",
-        "Mobile Robotics"
+        "Mobile Robotics",
+        "Robot Motion Planning"
       ],
       "summary": "Graduate studies focused on intelligent control and robotics within cyber-physical systems."
     },
@@ -108,33 +109,33 @@
       "name": "Autonomous Driving using ROS",
       "summary": "Built a ROS-based system with perception, planning, and control for autonomous driving.",
       "highlights": [],
-      "startDate": "",
-      "endDate": "",
-      "url": ""
+      "startDate": "04.2025",
+      "endDate": "07.2025",
+      "url": "/projects/ros_autonomous_driving_project/"
     },
     {
       "name": "Mobile Robot Development for Intralogistics",
       "summary": "Implemented kinematics, perception, control, navigation, and localization modules for a Raspberry Pi–based mobile robot in Python as part of Mobile Robotics Laboratory; integrated PID control, Dijkstra path planning, OpenCV object detection, and multi-sensor inputs (camera, ultrasonic, color).",
       "highlights": [],
-      "startDate": "",
-      "endDate": "",
-      "url": ""
+      "startDate": "08.2025",
+      "endDate": "09.2025",
+      "url": "/projects/mobile_robotics_intralogistics/"
     },
     {
       "name": "Humanoid Gait Imitation with Reinforcement Learning",
       "summary": "Developed a reinforcement learning framework to train a MuJoCo humanoid model for human-like walking. Integrated OpenSim inverse kinematics into the reward function to guide motion imitation based on real motion capture data.",
       "highlights": [],
-      "startDate": "",
-      "endDate": "",
-      "url": ""
+      "startDate": "04.2025",
+      "endDate": "07.2025",
+      "url": "/projects/humanoid_gate_imitation/"
     },
     {
       "name": "Embedded Ball Control using PD controller on dsPIC33F",
       "summary": "Implemented a PD controller on dsPIC33F microcontroller to achieve circular ball following, actuated with 2 servo motors.",
       "highlights": [],
-      "startDate": "",
-      "endDate": "",
-      "url": ""
+      "startDate": "04.2025",
+      "endDate": "07.2025",
+      "url": "/projects/amazing_ball/"
     }
   ],
   "skills": [
@@ -149,7 +150,7 @@
         "Git",
         "Object-Oriented Programming",
         "Linux",
-        "ROS"
+        "ROS/ROS2"
       ]
     }
   ],

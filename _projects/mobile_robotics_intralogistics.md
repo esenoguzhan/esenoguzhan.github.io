@@ -11,7 +11,7 @@ category: Master Course
 
 ---
 
-### 📖 Project Overview
+### 🔹 Project Overview
 This project was developed as part of the **Mobile Robotics Laboratory Challenge**, where teams simulated the automation of an entire intralogistics process using a mobile robot platform.  
 The goal was to demonstrate the feasibility of **autonomous guided vehicles (AGVs)** for internal material transport, similar to real-world operations at *Meyer & Meyer Logistics*.
 
@@ -28,7 +28,7 @@ Our robot was programmed to navigate autonomously through eight consecutive task
   The AGV
 </div>
 
-### ⚙️ Hardware Platform
+### 🔹 Hardware Platform
 
 The mobile robot platform was developed using components provided by **LFM at TUM**.  
 It integrates modular sensors and actuators to simulate an industrial autonomous guided vehicle (AGV).  
@@ -50,7 +50,7 @@ It integrates modular sensors and actuators to simulate an industrial autonomous
   - **Color camera:** Optical detection of the environment in front of the robot (used for QR/barcode reading and OpenCV-based object detection) 
 - **Communication:** MQTT via Wi-Fi module for worker-robot interaction  
 
-### 🏭 Scenario Description
+### 🔹 Scenario Description
 The AGV operated on a miniature logistics testbed with **black lane markings**, **colored task markers**, **QR codes**, and **barcodes**.  
 The complete process chain consisted of:
 
@@ -77,7 +77,7 @@ The complete process chain consisted of:
 
 ---
 
-### ⚙️ System Architecture
+### 🔹 System Architecture
 The robot’s control software followed a modular, layered design:
 
 - **Challenge.py** – Main control node managing the global state machine and task transitions  
@@ -89,7 +89,7 @@ The robot’s control software followed a modular, layered design:
 
 ---
 
-### 🚀 Highlights
+### 🔹 Highlights
 - Implemented **Dijkstra path planning** for warehouse navigation  
 - Developed **OpenCV-based object detection** for obstacle recognition and avoidance  
 - Built a **modular, task-oriented framework** covering all eight logistics processes  

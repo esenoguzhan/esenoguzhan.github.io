@@ -7,7 +7,7 @@ importance: 1
 category: Master Course
 ---
 
-## 🧭 ROS-Based Autonomous Driving Project
+## 🔹 ROS-Based Autonomous Driving Project
 
 **Course:** *Introduction to ROS* — Technical University of Munich  
 **Team Members:** Oğuzhan Eşen, Aras Fırat, Mert Kulak, Arif Güvenkaya, Hyunji Lee  
@@ -16,7 +16,7 @@ category: Master Course
 
 ---
 
-### 🚗 Overview
+### 🔹 Overview
 This project demonstrates a **ROS-based autonomous driving system** developed within the *Introduction to ROS* course at TUM.  
 The system drives a simulated car through a **Unity-based urban environment**, obeying traffic rules, stopping at red lights, and navigating efficiently along a predefined route — all implemented within a **modular ROS framework**.
 
@@ -28,7 +28,7 @@ The project covers the **complete autonomous driving pipeline**, including:
 
 ---
 
-### 🧠 System Architecture
+### 🔹 System Architecture
 
 The software stack was designed using the **ROS 1 navigation framework** and organized into multiple custom nodes communicating via standard ROS topics.  
 All components can be launched together with a single `launch_all.launch` file for seamless execution.
@@ -86,7 +86,7 @@ This control logic ensures stable navigation across complex intersections and cu
 
 ---
 
-### 🧩 ROS Graph
+### 🔹 ROS Graph
 The system includes multiple custom nodes under packages such as:
 - `perception` → Octomap & YOLOv8 detection  
 - `planning` → Global and local trajectory generation  
@@ -97,7 +97,7 @@ All nodes are connected through standard ROS topics forming a complete autonomy 
 
 ---
 
-### 📊 Results
+### 🔹 Results
 - The car successfully navigates the full route without collisions.  
 - Stops correctly at red lights detected by YOLO.  
 - Maintains smooth, kinematically feasible trajectories using the TEB planner.  
@@ -112,6 +112,6 @@ All nodes are connected through standard ROS topics forming a complete autonomy 
 
 ---
 
-### 📚 References
+### 🔹 References
 - Rösmann, C. – *teb_local_planner*, ROS Wiki  
 - Pure Pursuit Algorithm – *Algorithms for Automated Driving* (GitHub Pages)
