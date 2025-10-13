@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -402,7 +402,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-humanoid-modeling-using-real-gait-data",
+          section: "News",},{id: "projects-amazing-ball-control-with-pd-controller-on-dspic33f",
+          title: 'Amazing Ball Control with PD Controller on dsPIC33F',
+          description: "Implementation of a PD-controlled ball balancing system on a dsPIC33F-based touchscreen servo platform",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/amazing_ball/";
+            },},{id: "projects-humanoid-modeling-using-real-gait-data",
           title: 'Humanoid Modeling Using Real Gait Data',
           description: "Train a humanoid robot to imitate human gait by using MuJoCo, Opensim, dm_control and Stable Baselines-3.",
           section: "Projects",handler: () => {
