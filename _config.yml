@@ -194,7 +194,6 @@ exclude:
   - _pages/404
   - _pages/books
   - _pages/publications
-  - _pages/teaching
   - _pages/dropdown
   - _pages/news
   - _pages/profiles
