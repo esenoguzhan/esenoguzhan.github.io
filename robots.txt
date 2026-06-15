@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://esenoguzhan.github.io//sitemap.xml
