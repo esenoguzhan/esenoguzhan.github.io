@@ -28,13 +28,10 @@ jobs:
 
       - name: Assemble static site 📦
         run: |
-          mkdir -p dist/assets
+          mkdir -p dist
           cp index.html dist/
           touch dist/.nojekyll
-          cp -r assets/css dist/assets/css
-          cp -r assets/pdf dist/assets/pdf
-          mkdir -p dist/assets/js
-          cp assets/js/main.js dist/assets/js/main.js
+          cp -r assets dist/assets
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
