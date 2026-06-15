@@ -134,16 +134,15 @@ h4 {
   font-weight: 700;
 }
 .nav__logo {
-  display: grid;
-  place-items: center;
   width: 34px;
   height: 34px;
-  border-radius: 9px;
-  background: var(--grad);
-  color: #06231d;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.85rem;
+  object-fit: contain;
+  display: block;
+  /* Source icon is solid black; invert in dark theme for visibility */
+  filter: invert(1);
+}
+[data-theme="light"] .nav__logo {
+  filter: none;
 }
 .nav__name {
   font-size: 0.98rem;
