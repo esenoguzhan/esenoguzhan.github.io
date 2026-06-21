@@ -149,7 +149,7 @@ h4 {
 }
 .nav__links {
   display: flex;
-  gap: 28px;
+  gap: 22px;
   margin-left: auto;
   margin-right: 8px;
 }
@@ -862,7 +862,7 @@ h4 {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 860px) {
   .nav__links {
     position: fixed;
     inset: 68px 0 auto 0;
@@ -908,5 +908,256 @@ h4 {
   }
   .about__stats {
     grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Engagement page
+   ========================================================= */
+
+/* ---------- Highlight panel ("Why it costs you less") ---------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px 34px 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--grad);
+}
+.panel__head {
+  margin-bottom: 26px;
+}
+.panel__kicker {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.panel__sub {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.panel__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.panel__cell {
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+}
+.panel__cell:nth-child(odd) {
+  padding-right: 30px;
+}
+.panel__cell:nth-child(even) {
+  padding-left: 30px;
+  border-left: 1px solid var(--border);
+}
+.panel__cell h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  margin: 0 0 6px;
+}
+.panel__cell p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.panel__foot {
+  border-top: 1px solid var(--border);
+  padding: 24px 0 8px;
+}
+
+/* ---------- Numbered rows ("How this is set up") ---------- */
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+.step {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 24px;
+  padding: 26px 0;
+  border-top: 1px solid var(--border);
+}
+.step:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.step__num {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding-top: 3px;
+}
+.step h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.12rem;
+  margin: 0 0 8px;
+}
+.step p {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+.step p:last-child {
+  margin-bottom: 0;
+}
+.cite {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  border-radius: 8px;
+  padding: 4px 11px;
+  white-space: nowrap;
+}
+.cite::before {
+  content: "§";
+  opacity: 0.6;
+}
+
+/* ---------- Comparison table ---------- */
+.compare-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 480px;
+}
+.compare th,
+.compare td {
+  text-align: left;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.compare tbody tr:last-child td {
+  border-bottom: none;
+}
+.compare thead th {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 600;
+  background: var(--bg-alt);
+}
+.compare thead th.mine {
+  color: var(--accent);
+}
+.compare td:first-child {
+  font-weight: 600;
+  width: 36%;
+  color: var(--text);
+}
+.compare th.mine,
+.compare td.mine {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.compare td.mine {
+  color: var(--accent);
+  font-weight: 600;
+}
+.compare td.theirs {
+  color: var(--text-muted);
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq {
+  border-top: 1px solid var(--border);
+}
+.faq:last-of-type {
+  border-bottom: 1px solid var(--border);
+}
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+.faq[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq p {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+  max-width: 64ch;
+}
+
+/* ---------- Closing note ---------- */
+.eng-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 70ch;
+  border-left: 2px solid var(--accent);
+  padding-left: 18px;
+}
+.eng-note strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 28px 22px 8px;
+  }
+  .panel__grid {
+    grid-template-columns: 1fr;
+  }
+  .panel__cell:nth-child(odd),
+  .panel__cell:nth-child(even) {
+    padding: 20px 0;
+    border-left: 0;
+  }
+  .step {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .step__num {
+    padding-top: 0;
   }
 }
