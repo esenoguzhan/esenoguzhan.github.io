@@ -51,7 +51,12 @@
   }
 
   /* ---------- Scroll-spy ---------- */
-  var navItems = Array.prototype.slice.call(document.querySelectorAll(".nav__links a"));
+  var navItems = Array.prototype.slice
+    .call(document.querySelectorAll(".nav__links a"))
+    .filter(function (a) {
+      var href = a.getAttribute("href");
+      return href && href.charAt(0) === "#";
+    });
   var sections = navItems
     .map(function (a) {
       return document.querySelector(a.getAttribute("href"));
