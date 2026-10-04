@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation-Model Autonomous Driving on F1TENTH | Oguzhan Esen</title>
+    <meta name="description" content="ROS 2 autonomous-driving stack for an F1TENTH car where vision-language and large language models make high-level driving decisions on top of classical control." />
+    <meta name="author" content="Oguzhan Esen" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <link rel="canonical" href="https://oguzhanesen.com/projects/f1tenth_foundation_models/" />
+    <link rel="icon" type="image/png" href="/assets/img/robot.png" />
+    <link rel="apple-touch-icon" href="/assets/img/robot.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Foundation-Model Autonomous Driving on F1TENTH | Oguzhan Esen" />
+    <meta property="og:description" content="ROS 2 autonomous-driving stack for an F1TENTH car where vision-language and large language models make high-level driving decisions on top of classical control." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oguzhanesen.com/projects/f1tenth_foundation_models/" />
+    <meta property="og:site_name" content="Oguzhan Esen" />
+    <meta property="og:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Foundation-Model Autonomous Driving on F1TENTH | Oguzhan Esen" />
+    <meta name="twitter:description" content="ROS 2 autonomous-driving stack for an F1TENTH car where vision-language and large language models make high-level driving decisions on top of classical control." />
+    <meta name="twitter:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareSourceCode",
+          "name": "Foundation-Model Autonomous Driving on F1TENTH",
+          "headline": "Foundation-Model Autonomous Driving on F1TENTH",
+          "description": "ROS 2 autonomous-driving stack for an F1TENTH car where vision-language and large language models make high-level driving decisions on top of classical control.",
+          "url": "https://oguzhanesen.com/projects/f1tenth_foundation_models/",
+          "image": "https://oguzhanesen.com/assets/img/og-card.png",
+          "keywords": "ROS 2, VLM, LLM, Stanley Control, Jetson",
+          "author": {
+            "@type": "Person",
+            "name": "Oguzhan Esen",
+            "url": "https://oguzhanesen.com/"
+          },
+          "codeRepository": "https://github.com/esenoguzhan/f1tenth-vlm-llm"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://oguzhanesen.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projects",
+              "item": "https://oguzhanesen.com/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Foundation-Model Autonomous Driving on F1TENTH",
+              "item": "https://oguzhanesen.com/projects/f1tenth_foundation_models/"
+            }
+          ]
+        }
+      ]
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="/">
+          <img class="nav__logo" src="/assets/img/robot.png" alt="Oguzhan Esen logo" width="34" height="34" />
+          <span class="nav__name">Oguzhan Esen</span>
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="/engagement.html">How I work</a>
+          <a href="/#about">About</a>
+          <a href="/#research">Research</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#projects" class="is-active">Projects</a>
+          <a href="/#skills">Skills</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle color theme"
+            title="Toggle theme"
+          >
+            <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 17a5 5 0 100-10 5 5 0 000 10zm0 4v-2m0-14V3m9 9h-2M5 12H3m14.95 6.95l-1.41-1.41M7.46 7.46L6.05 6.05m12.9 0l-1.41 1.41M7.46 16.54l-1.41 1.41"
+              />
+            </svg>
+            <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </button>
+          <a class="btn btn--small" href="/assets/pdf/Esen_CV.pdf" download>Download CV</a>
+          <button class="nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--page">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero__inner">
+            <ol class="crumbs">
+              <li><a href="/">Home</a></li>
+              <li><a href="/#projects">Projects</a></li>
+              <li aria-current="page">Foundation-Model Driving on F1TENTH</li>
+            </ol>
+            <span class="section__kicker">Master project · TUM · Real hardware</span>
+            <h1 class="hero__title">Foundation-Model Autonomous Driving on F1TENTH</h1>
+            <p class="hero__lead">A full ROS 2 autonomous-driving stack for an F1TENTH race car, in which vision-language and large language models make high-level driving decisions on top of a classical perception, localization and control pipeline.</p>
+            <ul class="tags"><li>ROS 2</li><li>VLM</li><li>LLM</li><li>Stanley Control</li><li>Jetson</li></ul>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="https://github.com/esenoguzhan/f1tenth-vlm-llm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg> View code on GitHub</a>
+              <a class="btn btn--ghost" href="/#projects">← All projects</a>
+              <a class="btn btn--ghost" href="/#contact">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container project">
+          <article class="prose">
+            <h2>Architecture</h2>
+            <p>The system is layered so that foundation models can only influence the car through well-defined, checked interfaces:</p>
+            <ul>
+              <li><strong>Perception and localization:</strong> ZED camera and a particle filter.</li>
+              <li><strong>Control:</strong> a Stanley controller for stable lane tracking and path following.</li>
+              <li><strong>Decision making:</strong> a rule-based node augmented with VLM and LLM reasoning.</li>
+              <li><strong>Safety guard:</strong> a finite state machine between the foundation models and the low-level controller, so model outputs are always checked before they reach the car.</li>
+              <li><strong>Interface:</strong> a ROS bridge connecting the car to an external server that runs the models.</li>
+            </ul>
+
+            <figure class="figure figure--narrow">
+              <img src="/assets/img/projects/f1tenth-architecture.png" width="705" height="726" loading="lazy" alt="System architecture: voice and text prompts feed an LLM and VLM on a server, which send decisions to a decision maker that sets Stanley controller parameters and target lane" />
+              <figcaption>System architecture: the LLM and VLM run on a server and send decisions to the on-car decision maker.</figcaption>
+            </figure>
+
+            <h2>What it can do</h2>
+            <ul>
+              <li><strong>VLM overtaking:</strong> a vision-language model looks at the camera image and decides when to overtake.</li>
+              <li><strong>Voice commands:</strong> spoken commands go through speech recognition to an LLM that picks the driving behavior. Asked <em>"I am driving in the UK, which lane should I be in?"</em>, the car moves from the right lane to the left. Told <em>"I am in a hurry"</em>, it switches to an aggressive driving profile.</li>
+            </ul>
+
+            <h2>Validation</h2>
+            <p>The full stack was integrated and tested end to end on the real F1TENTH car, checking navigation and control performance under dynamic conditions.</p>
+          </article>
+          <aside>
+            <dl class="facts">
+              <dt>Context</dt>
+              <dd>Master project, TUM</dd>
+              <dt>Platform</dt>
+              <dd>F1TENTH vehicle · NVIDIA Jetson Nano · ZED camera</dd>
+              <dt>Stack</dt>
+              <dd>ROS 2, Python, particle filter, rosbridge</dd>
+              <dt>Code</dt>
+              <dd><a href="https://github.com/esenoguzhan/f1tenth-vlm-llm" target="_blank" rel="noopener">github.com/esenoguzhan/f1tenth-vlm-llm</a></dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <span class="section__kicker">More work</span>
+            <h2 class="section__title">Other projects</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/safe_rl_quadrotor_recovery/">Safe RL for Quadrotor Recovery</a></h3>
+              <p class="card__desc">PPO policy with a Control Barrier Function safety filter that recovers a quadrotor from fully inverted states, deployed on a real Agilicious drone.</p>
+              <a class="card__link" href="/projects/safe_rl_quadrotor_recovery/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/uav_cave_exploration/">UAV Cave Exploration</a></h3>
+              <p class="card__desc">ROS 2 quadrotor that autonomously explores and maps an unknown cave with OctoMap, frontier-based exploration, sampling-based planning and a geometric SE(3) controller.</p>
+              <a class="card__link" href="/projects/uav_cave_exploration/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/humanoid_gait_imitation/">Humanoid Gait Imitation with RL</a></h3>
+              <p class="card__desc">MuJoCo reinforcement-learning framework that teaches a humanoid to walk by imitating motion-capture data processed with OpenSim inverse kinematics.</p>
+              <a class="card__link" href="/projects/humanoid_gait_imitation/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Oguzhan Esen · Munich, Germany</p>
+        <p class="footer__sub">Robot Learning · Control · Physical AI</p>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autonomous UAV Cave Exploration &amp; Navigation | Oguzhan Esen</title>
+    <meta name="description" content="ROS 2 quadrotor that autonomously explores and maps an unknown cave with OctoMap, frontier-based exploration, sampling-based planning and a geometric SE(3) controller." />
+    <meta name="author" content="Oguzhan Esen" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <link rel="canonical" href="https://oguzhanesen.com/projects/uav_cave_exploration/" />
+    <link rel="icon" type="image/png" href="/assets/img/robot.png" />
+    <link rel="apple-touch-icon" href="/assets/img/robot.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Autonomous UAV Cave Exploration &amp; Navigation | Oguzhan Esen" />
+    <meta property="og:description" content="ROS 2 quadrotor that autonomously explores and maps an unknown cave with OctoMap, frontier-based exploration, sampling-based planning and a geometric SE(3) controller." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oguzhanesen.com/projects/uav_cave_exploration/" />
+    <meta property="og:site_name" content="Oguzhan Esen" />
+    <meta property="og:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Autonomous UAV Cave Exploration &amp; Navigation | Oguzhan Esen" />
+    <meta name="twitter:description" content="ROS 2 quadrotor that autonomously explores and maps an unknown cave with OctoMap, frontier-based exploration, sampling-based planning and a geometric SE(3) controller." />
+    <meta name="twitter:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareSourceCode",
+          "name": "Autonomous UAV Cave Exploration & Navigation",
+          "headline": "Autonomous UAV Cave Exploration & Navigation",
+          "description": "ROS 2 quadrotor that autonomously explores and maps an unknown cave with OctoMap, frontier-based exploration, sampling-based planning and a geometric SE(3) controller.",
+          "url": "https://oguzhanesen.com/projects/uav_cave_exploration/",
+          "image": "https://oguzhanesen.com/assets/img/og-card.png",
+          "keywords": "ROS 2, OctoMap, Frontier Exploration, Motion Planning, SE(3) Control",
+          "author": {
+            "@type": "Person",
+            "name": "Oguzhan Esen",
+            "url": "https://oguzhanesen.com/"
+          },
+          "codeRepository": "https://github.com/esenoguzhan/autonomous_cave_navigation"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://oguzhanesen.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projects",
+              "item": "https://oguzhanesen.com/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Autonomous UAV Cave Exploration & Navigation",
+              "item": "https://oguzhanesen.com/projects/uav_cave_exploration/"
+            }
+          ]
+        }
+      ]
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="/">
+          <img class="nav__logo" src="/assets/img/robot.png" alt="Oguzhan Esen logo" width="34" height="34" />
+          <span class="nav__name">Oguzhan Esen</span>
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="/engagement.html">How I work</a>
+          <a href="/#about">About</a>
+          <a href="/#research">Research</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#projects" class="is-active">Projects</a>
+          <a href="/#skills">Skills</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle color theme"
+            title="Toggle theme"
+          >
+            <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 17a5 5 0 100-10 5 5 0 000 10zm0 4v-2m0-14V3m9 9h-2M5 12H3m14.95 6.95l-1.41-1.41M7.46 7.46L6.05 6.05m12.9 0l-1.41 1.41M7.46 16.54l-1.41 1.41"
+              />
+            </svg>
+            <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </button>
+          <a class="btn btn--small" href="/assets/pdf/Esen_CV.pdf" download>Download CV</a>
+          <button class="nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--page">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero__inner">
+            <ol class="crumbs">
+              <li><a href="/">Home</a></li>
+              <li><a href="/#projects">Projects</a></li>
+              <li aria-current="page">UAV Cave Exploration</li>
+            </ol>
+            <span class="section__kicker">TUM Autonomous Systems course · Sub-Terrain Challenge · 2025</span>
+            <h1 class="hero__title">Autonomous UAV Cave Exploration &amp; Navigation</h1>
+            <p class="hero__lead">A quadrotor that takes off, flies to a cave entrance, and then explores the unknown interior on its own, building a 3D map as it goes and deciding where to fly next.</p>
+            <ul class="tags"><li>ROS 2</li><li>OctoMap</li><li>Frontier Exploration</li><li>Motion Planning</li><li>SE(3) Control</li></ul>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="https://github.com/esenoguzhan/autonomous_cave_navigation" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg> View code on GitHub</a>
+              <a class="btn btn--ghost" href="/#projects">← All projects</a>
+              <a class="btn btn--ghost" href="/#contact">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container project">
+          <article class="prose">
+            <h2>Pipeline</h2>
+            <ol>
+              <li>The simulation streams depth images and odometry from Unity and forwards rotor commands back.</li>
+              <li>An OctoMap server turns depth images into point clouds and builds a 3D occupancy map.</li>
+              <li>A mission-control state machine runs the mission: idle, takeoff, navigate to the cave, explore, finish.</li>
+              <li>A frontier detector finds boundaries between mapped and unknown space, clusters them with mean-shift, and picks the best exploration goal.</li>
+              <li>A sampling-based planner generates candidate quintic-polynomial trajectories, checks them for collisions against the map, and picks the best one.</li>
+              <li>A geometric SE(3) controller (Lee et al.) tracks the trajectory.</li>
+            </ol>
+
+            <figure class="figure">
+              <img src="/assets/img/projects/cave-architecture.png" width="1355" height="857" loading="lazy" alt="ROS 2 node graph of the cave exploration system" />
+              <figcaption>ROS 2 system architecture.</figcaption>
+            </figure>
+
+            <h2>Design decisions</h2>
+            <ul>
+              <li><strong>Frontier-based exploration:</strong> no predefined paths inside the cave; the drone decides where to go from the map itself.</li>
+              <li><strong>Sampling-based planning:</strong> sampling many smooth polynomial trajectories instead of graph search gives dynamically feasible paths.</li>
+              <li><strong>Non-zero terminal velocity:</strong> segments end at 70% of cruise speed so consecutive trajectories chain smoothly, without stop-and-go.</li>
+              <li><strong>Goal debouncing:</strong> small shifts in the frontier goal are ignored to avoid jittery replanning.</li>
+              <li><strong>Object detection:</strong> a semantic camera pipeline finds lanterns in the cave and tracks their 3D positions.</li>
+            </ul>
+          </article>
+          <aside>
+            <dl class="facts">
+              <dt>Context</dt>
+              <dd>TUM Autonomous Systems 2025, team project (5 people)</dd>
+              <dt>Platform</dt>
+              <dd>Quadrotor in a Unity simulation</dd>
+              <dt>Stack</dt>
+              <dd>ROS 2 Jazzy, C++, OctoMap, PCL</dd>
+              <dt>Code</dt>
+              <dd><a href="https://github.com/esenoguzhan/autonomous_cave_navigation" target="_blank" rel="noopener">github.com/esenoguzhan/autonomous_cave_navigation</a></dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <span class="section__kicker">More work</span>
+            <h2 class="section__title">Other projects</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/safe_rl_quadrotor_recovery/">Safe RL for Quadrotor Recovery</a></h3>
+              <p class="card__desc">PPO policy with a Control Barrier Function safety filter that recovers a quadrotor from fully inverted states, deployed on a real Agilicious drone.</p>
+              <a class="card__link" href="/projects/safe_rl_quadrotor_recovery/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/f1tenth_foundation_models/">Foundation-Model Driving on F1TENTH</a></h3>
+              <p class="card__desc">ROS 2 autonomous-driving stack for an F1TENTH car where vision-language and large language models make high-level driving decisions on top of classical control.</p>
+              <a class="card__link" href="/projects/f1tenth_foundation_models/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/humanoid_gait_imitation/">Humanoid Gait Imitation with RL</a></h3>
+              <p class="card__desc">MuJoCo reinforcement-learning framework that teaches a humanoid to walk by imitating motion-capture data processed with OpenSim inverse kinematics.</p>
+              <a class="card__link" href="/projects/humanoid_gait_imitation/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Oguzhan Esen · Munich, Germany</p>
+        <p class="footer__sub">Robot Learning · Control · Physical AI</p>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>
