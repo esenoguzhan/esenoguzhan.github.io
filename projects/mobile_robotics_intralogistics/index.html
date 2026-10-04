@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Robot Development for Intralogistics | Oguzhan Esen</title>
+    <meta name="description" content="Raspberry Pi mobile robot for warehouse logistics with Dijkstra path planning, OpenCV perception, PID control and MQTT task allocation. 1st place in the course challenge." />
+    <meta name="author" content="Oguzhan Esen" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <link rel="canonical" href="https://oguzhanesen.com/projects/mobile_robotics_intralogistics/" />
+    <link rel="icon" type="image/png" href="/assets/img/robot.png" />
+    <link rel="apple-touch-icon" href="/assets/img/robot.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mobile Robot Development for Intralogistics | Oguzhan Esen" />
+    <meta property="og:description" content="Raspberry Pi mobile robot for warehouse logistics with Dijkstra path planning, OpenCV perception, PID control and MQTT task allocation. 1st place in the course challenge." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oguzhanesen.com/projects/mobile_robotics_intralogistics/" />
+    <meta property="og:site_name" content="Oguzhan Esen" />
+    <meta property="og:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mobile Robot Development for Intralogistics | Oguzhan Esen" />
+    <meta name="twitter:description" content="Raspberry Pi mobile robot for warehouse logistics with Dijkstra path planning, OpenCV perception, PID control and MQTT task allocation. 1st place in the course challenge." />
+    <meta name="twitter:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "name": "Mobile Robot Development for Intralogistics",
+          "headline": "Mobile Robot Development for Intralogistics",
+          "description": "Raspberry Pi mobile robot for warehouse logistics with Dijkstra path planning, OpenCV perception, PID control and MQTT task allocation. 1st place in the course challenge.",
+          "url": "https://oguzhanesen.com/projects/mobile_robotics_intralogistics/",
+          "image": "https://oguzhanesen.com/assets/img/og-card.png",
+          "keywords": "Raspberry Pi, Dijkstra, OpenCV, PID, MQTT",
+          "author": {
+            "@type": "Person",
+            "name": "Oguzhan Esen",
+            "url": "https://oguzhanesen.com/"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://oguzhanesen.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projects",
+              "item": "https://oguzhanesen.com/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Mobile Robot Development for Intralogistics",
+              "item": "https://oguzhanesen.com/projects/mobile_robotics_intralogistics/"
+            }
+          ]
+        }
+      ]
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="/">
+          <img class="nav__logo" src="/assets/img/robot.png" alt="Oguzhan Esen logo" width="34" height="34" />
+          <span class="nav__name">Oguzhan Esen</span>
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="/engagement.html">How I work</a>
+          <a href="/#about">About</a>
+          <a href="/#research">Research</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#projects" class="is-active">Projects</a>
+          <a href="/#skills">Skills</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle color theme"
+            title="Toggle theme"
+          >
+            <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 17a5 5 0 100-10 5 5 0 000 10zm0 4v-2m0-14V3m9 9h-2M5 12H3m14.95 6.95l-1.41-1.41M7.46 7.46L6.05 6.05m12.9 0l-1.41 1.41M7.46 16.54l-1.41 1.41"
+              />
+            </svg>
+            <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </button>
+          <a class="btn btn--small" href="/assets/pdf/Esen_CV.pdf" download>Download CV</a>
+          <button class="nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--page">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero__inner">
+            <ol class="crumbs">
+              <li><a href="/">Home</a></li>
+              <li><a href="/#projects">Projects</a></li>
+              <li aria-current="page">Mobile Robot for Intralogistics</li>
+            </ol>
+            <span class="section__kicker">Master project · TUM · 1st place</span>
+            <h1 class="hero__title">Mobile Robot Development for Intralogistics</h1>
+            <p class="hero__lead">A LEGO-based mobile robot on a Raspberry Pi that navigates a model warehouse and carries out logistics tasks. It won 1st place in the course challenge.</p>
+            <ul class="tags"><li>Raspberry Pi</li><li>Dijkstra</li><li>OpenCV</li><li>PID</li><li>MQTT</li></ul>
+            <div class="hero__cta">
+              <a class="btn btn--ghost" href="/#projects">← All projects</a>
+              <a class="btn btn--ghost" href="/#contact">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container project">
+          <article class="prose">
+            <h2>What I built</h2>
+            <ul>
+              <li><strong>Planning:</strong> Dijkstra-based global path planning for efficient routes through the warehouse.</li>
+              <li><strong>Perception:</strong> an OpenCV pipeline for object detection.</li>
+              <li><strong>Control:</strong> PID motor control for the differential drive, for stable trajectory tracking.</li>
+              <li><strong>Coordination:</strong> MQTT-based communication for dynamic task allocation and human–robot interaction.</li>
+            </ul>
+
+            <h2>Result</h2>
+            <p>The robot achieved 1st place in the course challenge evaluation.</p>
+          </article>
+          <aside>
+            <dl class="facts">
+              <dt>Context</dt>
+              <dd>Master project, TUM</dd>
+              <dt>Result</dt>
+              <dd>1st place in the course challenge</dd>
+              <dt>Platform</dt>
+              <dd>LEGO differential-drive robot · Raspberry Pi</dd>
+              <dt>Stack</dt>
+              <dd>Python, OpenCV, MQTT</dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <span class="section__kicker">More work</span>
+            <h2 class="section__title">Other projects</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/safe_rl_quadrotor_recovery/">Safe RL for Quadrotor Recovery</a></h3>
+              <p class="card__desc">PPO policy with a Control Barrier Function safety filter that recovers a quadrotor from fully inverted states, deployed on a real Agilicious drone.</p>
+              <a class="card__link" href="/projects/safe_rl_quadrotor_recovery/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/f1tenth_foundation_models/">Foundation-Model Driving on F1TENTH</a></h3>
+              <p class="card__desc">ROS 2 autonomous-driving stack for an F1TENTH car where vision-language and large language models make high-level driving decisions on top of classical control.</p>
+              <a class="card__link" href="/projects/f1tenth_foundation_models/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/uav_cave_exploration/">UAV Cave Exploration</a></h3>
+              <p class="card__desc">ROS 2 quadrotor that autonomously explores and maps an unknown cave with OctoMap, frontier-based exploration, sampling-based planning and a geometric SE(3) controller.</p>
+              <a class="card__link" href="/projects/uav_cave_exploration/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Oguzhan Esen · Munich, Germany</p>
+        <p class="footer__sub">Robot Learning · Control · Physical AI</p>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

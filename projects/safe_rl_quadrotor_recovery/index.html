@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Reinforcement Learning for Quadrotor Recovery | Oguzhan Esen</title>
+    <meta name="description" content="PPO policy with a Control Barrier Function safety filter that recovers a quadrotor from fully inverted states, deployed on a real Agilicious drone." />
+    <meta name="author" content="Oguzhan Esen" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <link rel="canonical" href="https://oguzhanesen.com/projects/safe_rl_quadrotor_recovery/" />
+    <link rel="icon" type="image/png" href="/assets/img/robot.png" />
+    <link rel="apple-touch-icon" href="/assets/img/robot.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Safe Reinforcement Learning for Quadrotor Recovery | Oguzhan Esen" />
+    <meta property="og:description" content="PPO policy with a Control Barrier Function safety filter that recovers a quadrotor from fully inverted states, deployed on a real Agilicious drone." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oguzhanesen.com/projects/safe_rl_quadrotor_recovery/" />
+    <meta property="og:site_name" content="Oguzhan Esen" />
+    <meta property="og:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Safe Reinforcement Learning for Quadrotor Recovery | Oguzhan Esen" />
+    <meta name="twitter:description" content="PPO policy with a Control Barrier Function safety filter that recovers a quadrotor from fully inverted states, deployed on a real Agilicious drone." />
+    <meta name="twitter:image" content="https://oguzhanesen.com/assets/img/og-card.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareSourceCode",
+          "name": "Safe Reinforcement Learning for Quadrotor Recovery",
+          "headline": "Safe Reinforcement Learning for Quadrotor Recovery",
+          "description": "PPO policy with a Control Barrier Function safety filter that recovers a quadrotor from fully inverted states, deployed on a real Agilicious drone.",
+          "url": "https://oguzhanesen.com/projects/safe_rl_quadrotor_recovery/",
+          "image": "https://oguzhanesen.com/assets/img/og-card.png",
+          "keywords": "PPO, Control Barrier Functions, Sim-to-Real, NMPC, Stable-Baselines3",
+          "author": {
+            "@type": "Person",
+            "name": "Oguzhan Esen",
+            "url": "https://oguzhanesen.com/"
+          },
+          "codeRepository": "https://github.com/esenoguzhan/safe_rl_agilicious"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://oguzhanesen.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projects",
+              "item": "https://oguzhanesen.com/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Safe Reinforcement Learning for Quadrotor Recovery",
+              "item": "https://oguzhanesen.com/projects/safe_rl_quadrotor_recovery/"
+            }
+          ]
+        }
+      ]
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="/">
+          <img class="nav__logo" src="/assets/img/robot.png" alt="Oguzhan Esen logo" width="34" height="34" />
+          <span class="nav__name">Oguzhan Esen</span>
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="/engagement.html">How I work</a>
+          <a href="/#about">About</a>
+          <a href="/#research">Research</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#projects" class="is-active">Projects</a>
+          <a href="/#skills">Skills</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle color theme"
+            title="Toggle theme"
+          >
+            <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 17a5 5 0 100-10 5 5 0 000 10zm0 4v-2m0-14V3m9 9h-2M5 12H3m14.95 6.95l-1.41-1.41M7.46 7.46L6.05 6.05m12.9 0l-1.41 1.41M7.46 16.54l-1.41 1.41"
+              />
+            </svg>
+            <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </button>
+          <a class="btn btn--small" href="/assets/pdf/Esen_CV.pdf" download>Download CV</a>
+          <button class="nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--page">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero__inner">
+            <ol class="crumbs">
+              <li><a href="/">Home</a></li>
+              <li><a href="/#projects">Projects</a></li>
+              <li aria-current="page">Safe RL for Quadrotor Recovery</li>
+            </ol>
+            <span class="section__kicker">Semester thesis · Autonomous Aerial Systems Lab, TUM · 2025–2026</span>
+            <h1 class="hero__title">Safe Reinforcement Learning for Quadrotor Recovery</h1>
+            <p class="hero__lead">I trained a reinforcement-learning policy that flies a quadrotor back to a goal from almost any starting state, including upside down, and added a Control Barrier Function safety filter that keeps it inside a safe region at deployment. The policy was validated on a real Agilicious quadrotor.</p>
+            <ul class="tags"><li>PPO</li><li>Control Barrier Functions</li><li>Sim-to-Real</li><li>NMPC</li><li>Stable-Baselines3</li></ul>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="https://github.com/esenoguzhan/safe_rl_agilicious" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg> View code on GitHub</a>
+              <a class="btn btn--ghost" href="/#projects">← All projects</a>
+              <a class="btn btn--ghost" href="/#contact">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container project">
+          <article class="prose">
+            <h2>The problem</h2>
+            <p>Recovering a quadrotor from extreme states such as high velocities, high body rates, or a fully inverted attitude is where classical controllers struggle. Learned policies can handle these states, but they come with no guarantee that the drone stays out of unsafe regions.</p>
+
+            <h2>Approach</h2>
+            <ul>
+              <li><strong>Learning:</strong> PPO (Stable-Baselines3) in an extended Flightmare simulator with Agilicious dynamics, using action-history observations.</li>
+              <li><strong>Reward and curriculum:</strong> a dual-scale Cauchy reward combined with goal-directed velocity objectives, plus curriculum learning, so the reward stays informative across the whole flight envelope.</li>
+              <li><strong>Robustness:</strong> domain randomization of mass, motor time constant and command delay, plus calibrated disturbances (wind, drag, sensor noise) for sim-to-real transfer.</li>
+              <li><strong>Safety:</strong> a minimum-intervention CBF quadratic program, built from Lie derivatives of the nonlinear quadrotor dynamics, that corrects the RL action at each step. It is used only at deployment, so training is unchanged, and it runs in under 1&nbsp;ms per step.</li>
+              <li><strong>Baselines:</strong> a nonlinear MPC and a soft-constrained variant that share the same dynamics model and solver, for a fair comparison.</li>
+            </ul>
+
+            <h2>Results</h2>
+            <ul>
+              <li>Recovers from up to ±8&nbsp;m/s, ±10&nbsp;rad/s, and upside-down starts, where the NMPC baseline fails.</li>
+              <li>Stays reliable when the real mass or motor dynamics differ from the nominal model.</li>
+              <li>With the CBF filter, the drone stays inside the safe region, where plain RL and NMPC cross the boundary.</li>
+              <li>Deployed on a real Agilicious quadrotor, confirming real-time performance and sim-to-real transfer.</li>
+            </ul>
+
+            <figure class="figure">
+              <img src="/assets/img/projects/safe-rl-inverted-recovery.png" width="1400" height="662" loading="lazy" alt="Quadrotor recovering from a fully inverted start, shown for the RL policy alone and with the CBF safety filter" />
+              <figcaption>Recovery from a fully inverted start: (a) RL policy, (b) RL policy with the CBF filter.</figcaption>
+            </figure>
+
+            <figure class="figure">
+              <img src="/assets/img/projects/safe-rl-cbf-safety.png" width="1400" height="631" loading="lazy" alt="Altitude trajectories showing the CBF keeping the quadrotor between ceiling and ground limits" />
+              <figcaption>Vertical safety constraints with the goal placed outside the safe region. Plain RL and NMPC cross the boundary; RL&nbsp;+&nbsp;CBF stays inside it.</figcaption>
+            </figure>
+
+            <h2>Publication</h2>
+            <blockquote><strong>Safe Reinforcement Learning with Control Barrier Functions for Quadrotor Recovery.</strong><br />O. Eşen, Y. Yuan, M. Ryll. Technical University of Munich. Submitted to an international controls conference.</blockquote>
+          </article>
+          <aside>
+            <dl class="facts">
+              <dt>Context</dt>
+              <dd>Semester thesis, Autonomous Aerial Systems Lab, TUM</dd>
+              <dt>Period</dt>
+              <dd>Oct 2025 — Jun 2026</dd>
+              <dt>Platform</dt>
+              <dd>Flightmare simulator · Agilicious quadrotor</dd>
+              <dt>Stack</dt>
+              <dd>Python, PyTorch, Stable-Baselines3, acados, ROS</dd>
+              <dt>Code</dt>
+              <dd><a href="https://github.com/esenoguzhan/safe_rl_agilicious" target="_blank" rel="noopener">github.com/esenoguzhan/safe_rl_agilicious</a></dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <span class="section__kicker">More work</span>
+            <h2 class="section__title">Other projects</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/f1tenth_foundation_models/">Foundation-Model Driving on F1TENTH</a></h3>
+              <p class="card__desc">ROS 2 autonomous-driving stack for an F1TENTH car where vision-language and large language models make high-level driving decisions on top of classical control.</p>
+              <a class="card__link" href="/projects/f1tenth_foundation_models/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/uav_cave_exploration/">UAV Cave Exploration</a></h3>
+              <p class="card__desc">ROS 2 quadrotor that autonomously explores and maps an unknown cave with OctoMap, frontier-based exploration, sampling-based planning and a geometric SE(3) controller.</p>
+              <a class="card__link" href="/projects/uav_cave_exploration/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+            <article class="card">
+              <h3 class="card__title"><a href="/projects/humanoid_gait_imitation/">Humanoid Gait Imitation with RL</a></h3>
+              <p class="card__desc">MuJoCo reinforcement-learning framework that teaches a humanoid to walk by imitating motion-capture data processed with OpenSim inverse kinematics.</p>
+              <a class="card__link" href="/projects/humanoid_gait_imitation/">Read more <svg viewBox="0 0 24 24" class="icon icon--line" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Oguzhan Esen · Munich, Germany</p>
+        <p class="footer__sub">Robot Learning · Control · Physical AI</p>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>
