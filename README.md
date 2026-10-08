@@ -2,7 +2,8 @@
 
 Website of **Esen Robotics**, a founder-led robot-learning venture by
 **Oguzhan Esen**, served at **https://oguzhanesen.com** (custom domain, see `CNAME`).
-The original personal website remains available at `/personal.html`.
+The original personal website is preserved in Git history. The startup site
+does not publish or link to the personal homepage or freelance engagement page.
 
 A fast static site (no build step) hosted on GitHub Pages.
 
@@ -10,8 +11,7 @@ A fast static site (no build step) hosted on GitHub Pages.
 
 ```
 index.html                    # Esen Robotics startup landing page
-personal.html                 # preserved personal page / CV
-engagement.html               # engagement model ("How I work")
+engagement.html               # legacy engagement page; excluded from deployment
 projects/<slug>/index.html    # one page per project
 projects/humanoid_gate_imitation/, projects/amazing_ball/
                               # redirect stubs for old URLs linked from the CV
@@ -43,15 +43,14 @@ so preview from the repo root rather than opening files directly.
 
 ## Deployment
 
-`/.github/workflows/deploy.yml` copies the site files (all root `*.html`,
+`/.github/workflows/deploy.yml` copies the public site files (`index.html`, `404.html`,
 `projects/`, `assets/`, `robots.txt`, `sitemap.xml`, `CNAME`) into `dist/` and
 publishes them to the `gh-pages` branch on every push to `main`/`master`.
 When adding a new top-level file or folder, add it to that workflow too.
 
 ## Editing content
 
-- Startup content lives in `index.html`; personal content lives in
-  `personal.html`; project details live in
+- Startup content lives in `index.html`; project details live in
   `projects/<slug>/index.html`.
 - Replace `assets/pdf/Esen_CV.pdf` to refresh the downloadable CV.
 - Canonical URLs, Open Graph tags and structured data use
@@ -86,13 +85,13 @@ the original homepage without deleting history:
 
 ```bash
 git switch main
-git restore --source=678b003ea7eea3ec9eee7e30448d4db405d9cb32 -- index.html
-git commit -m "Restore personal homepage"
+git restore --source=678b003ea7eea3ec9eee7e30448d4db405d9cb32 -- .
+git commit -m "Restore personal website"
 git push origin main
 ```
 
 Save/commit any work you want to keep before switching branches. This preserves
-Git history and leaves the startup work available for reuse. The extra startup
-assets and `/personal.html` can remain without affecting the personal homepage.
-To undo the entire startup change after it has been committed and merged, revert
-the startup commit instead. Avoid resetting or force-pushing shared history.
+Git history and leaves the startup work available for reuse. The restore includes
+the original homepage, portfolio navigation, sitemap, and deployment workflow.
+To undo the startup changes after they have been committed and merged, revert
+the startup commits instead. Avoid resetting or force-pushing shared history.
