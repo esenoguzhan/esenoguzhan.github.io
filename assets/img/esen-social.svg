@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f5f0"/>
+  <rect x="630" y="50" width="520" height="530" fill="#1e2c25"/>
+  <g stroke="#1f2e29" stroke-width="4" fill="none"><path d="M55 55h32M55 72h22M55 89h32M55 55v34"/><circle cx="86" cy="72" r="3"/></g>
+  <g fill="#1f2e29" font-family="Arial, sans-serif"><text x="105" y="82" font-size="36" font-weight="600" letter-spacing="-2">esen</text><text x="194" y="82" font-size="20">robotics</text>
+  <text x="52" y="188" font-family="monospace" font-size="11" letter-spacing="2">ROBOT LEARNING. REAL-WORLD AMBITION.</text>
+  <text x="48" y="286" font-size="72" letter-spacing="-4">Learning systems</text><text x="48" y="370" font-size="72" letter-spacing="-4">for the <tspan font-family="Georgia, serif" font-style="italic">physical</tspan></text><text x="48" y="454" font-family="Georgia, serif" font-style="italic" font-size="78" letter-spacing="-4">world.</text>
+  <text x="52" y="545" font-size="17" fill="#5e6860">A venture by Oguzhan Esen · oguzhanesen.com</text></g>
+  <text x="657" y="86" fill="#c7d2ba" font-family="monospace" font-size="11" letter-spacing="2">ESEN ROBOTICS / SKILL WORKSPACE</text>
+  <svg x="620" y="132" width="540" height="410" viewBox="0 0 620 470" role="img" aria-labelledby="scene-title scene-description">
+                <title id="scene-title">Robot arm learning a pick-and-place skill</title>
+                <desc id="scene-description">An illustrative robot arm above a gridded work surface, with a lime target block and example motion paths.</desc>
+                <defs>
+                  <linearGradient id="table-gradient" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#303c3b" stop-opacity=".65"/><stop offset="1" stop-color="#182321" stop-opacity=".1"/></linearGradient>
+                  <linearGradient id="arm-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c5cfbf"/><stop offset="1" stop-color="#6d8074"/></linearGradient>
+                  <linearGradient id="base-gradient" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7b8d7d"/><stop offset="1" stop-color="#3b5044"/></linearGradient>
+                  <pattern id="scene-grid" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="matrix(1 .45 -1 .45 305 240)"><path d="M40 0H0V40" fill="none" stroke="#748577" stroke-width=".8" opacity=".35"/></pattern>
+                  <filter id="target-glow"><feGaussianBlur stdDeviation="13"/></filter>
+                </defs>
+                <ellipse cx="318" cy="358" rx="182" ry="47" fill="#0b1711" opacity=".55"/>
+                <path d="M33 298 307 173 594 301 320 433Z" fill="url(#table-gradient)" stroke="#536252" stroke-opacity=".4"/>
+                <path d="M33 298 307 173 594 301 320 433Z" fill="url(#scene-grid)"/>
+                <path d="M33 298v11l287 133 274-132v-9M320 433v9" fill="none" stroke="#566251" stroke-opacity=".3"/>
+                <path d="m111 335 39 18m-39-18 39-18m-39 18v-33" fill="none" stroke-width="1.4" stroke="#839b79"/>
+                <g fill="#a0b395" font-family="monospace" font-size="10"><text x="154" y="356">X</text><text x="152" y="316">Y</text><text x="107" y="296">Z</text></g>
+                <ellipse class="target-halo" cx="418" cy="309" rx="49" ry="20" fill="#c5ed79" opacity=".15" filter="url(#target-glow)"/>
+                <path class="motion-path" d="M285 283C325 223 427 204 448 261S408 341 377 302" fill="none" stroke="#c2e989" stroke-width="1.8" stroke-dasharray="5 7" opacity=".7"/>
+                <path class="secondary-path" d="M292 284C328 242 407 243 424 277" fill="none" stroke="#768e77" stroke-width="1" stroke-dasharray="3 7"/>
+                <g class="target-zone" fill="none" stroke="#c3e98b" stroke-width="1.3" opacity=".6"><path d="m375 316 43-20 43 20-43 20Z" stroke-dasharray="4 5"/><path d="M375 304v-11l14-6m58 0 14 6v11m0 24v11l-14 6m-58 0-14-6v-11"/></g>
+                <g class="target-block"><path d="m397 301 22-10 24 11-23 11Z" fill="#d4f59c"/><path d="m397 301 23 12v27l-23-12Z" fill="#8ca953"/><path d="m420 313 23-11v27l-23 11Z" fill="#b6d779"/><path d="m397 301 23 12 23-11M420 313v27" fill="none" stroke="#efffcb" stroke-opacity=".45"/></g>
+                <g class="robot-arm">
+                  <path d="m208 326 47-23 59 26-47 24Z" fill="#7c8d78"/>
+                  <path d="m208 326 59 27v20l-59-27Z" fill="#344d3e"/>
+                  <path d="m267 353 47-24v20l-47 24Z" fill="#526c56"/>
+                  <ellipse cx="261" cy="326" rx="32" ry="15" fill="#829381" stroke="#adbea2"/>
+                  <path d="M229 326v-30c0-20 64-20 64 0v30c0 20-64 20-64 0" fill="url(#base-gradient)" stroke="#91a08a"/>
+                  <ellipse cx="261" cy="296" rx="32" ry="15" fill="#adba9f"/>
+                  <path d="m245 291-34-101 30-17 38 111" fill="url(#arm-gradient)" stroke="#c2cdb7" stroke-width="1.2"/>
+                  <path d="m245 291 14-7-33-102-15 8Z" fill="#556e59"/>
+                  <path d="m213 198 15-8" fill="none" stroke="#233b2a" stroke-width="9"/>
+                  <ellipse cx="230" cy="180" rx="23" ry="26" transform="rotate(-22 230 180)" fill="#718b70" stroke="#c2cdb7" stroke-width="2"/>
+                  <ellipse cx="223" cy="183" rx="12" ry="15" transform="rotate(-22 223 183)" fill="#243f2d" stroke="#94ab84" stroke-width="1.3"/>
+                  <circle cx="222" cy="183" r="4" fill="#c5ed8b"/>
+                  <path d="m236 160 82 54-12 25-84-49" fill="url(#arm-gradient)" stroke="#c2cdb7" stroke-width="1.2"/>
+                  <path d="m222 190 84 49 4-10-82-52Z" fill="#56705b"/>
+                  <ellipse cx="313" cy="223" rx="16" ry="20" transform="rotate(-32 313 223)" fill="#829779" stroke="#c2cdb7" stroke-width="1.5"/>
+                  <ellipse cx="309" cy="226" rx="9" ry="12" transform="rotate(-32 309 226)" fill="#233e2b" stroke="#9eaf8d"/>
+                  <path d="m324 221 31 33-12 15-34-34" fill="url(#arm-gradient)" stroke="#b7c6aa"/>
+                  <path d="m343 255 13 7-7 15-14-7Z" fill="#9fae92" stroke="#c2cdb7"/>
+                  <path d="m339 273-3 20 13 10m13-35 6 21-11 12" fill="none" stroke="#9aac8f" stroke-width="6" stroke-linejoin="round"/>
+                  <path d="m339 273-3 20 13 10m13-35 6 21-11 12" fill="none" stroke="#d2ddbe" stroke-width="1.2" stroke-linejoin="round"/>
+                  <path d="M264 290 235 196m8-15 65 42m17 13 18 24" fill="none" stroke="#1e3e2a" stroke-width="3"/>
+                </g>
+                <g class="scene-annotation" fill="none" stroke="#6f856b" stroke-width=".9"><path d="M229 154v-35h64"/><circle cx="229" cy="154" r="3"/><path d="m454 311 35-19h49"/><circle cx="454" cy="311" r="3"/></g>
+                <g fill="#a8b69f" font-family="monospace" font-size="9" letter-spacing="1"><text x="240" y="111">LEARNED POLICY</text><text x="489" y="284">TARGET</text></g>
+                <g class="scene-corner" fill="none" stroke="#a3b98e" stroke-width="1" opacity=".5"><path d="M48 83V66h17M572 83V66h-17M48 387v17h17M572 387v17h-17"/></g>
+              </svg>
+  <path d="M654 521h472" stroke="#526345"/><text x="657" y="553" fill="#d5ed9a" font-family="monospace" font-size="11" letter-spacing="2">DEMONSTRATE → LEARN → EVALUATE</text>
+  </svg>

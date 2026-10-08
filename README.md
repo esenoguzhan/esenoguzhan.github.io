@@ -1,14 +1,16 @@
 # esenoguzhan.github.io
 
-Personal website / CV of **Oguzhan Esen** — Robot Learning & Control Engineer,
-served at **https://oguzhanesen.com** (custom domain, see `CNAME`).
+Website of **Esen Robotics**, a founder-led robot-learning venture by
+**Oguzhan Esen**, served at **https://oguzhanesen.com** (custom domain, see `CNAME`).
+The original personal website remains available at `/personal.html`.
 
 A fast static site (no build step) hosted on GitHub Pages.
 
 ## Structure
 
 ```
-index.html                    # main page (hero, about, research, experience, projects, skills, contact)
+index.html                    # Esen Robotics startup landing page
+personal.html                 # preserved personal page / CV
 engagement.html               # engagement model ("How I work")
 projects/<slug>/index.html    # one page per project
 projects/humanoid_gate_imitation/, projects/amazing_ball/
@@ -16,6 +18,11 @@ projects/humanoid_gate_imitation/, projects/amazing_ball/
 404.html                      # not-found page
 assets/css/main.css           # styles (design system, light/dark theme)
 assets/js/main.js             # nav, theme toggle, scroll-spy, reveal animations
+assets/css/startup.css         # separate startup page styles
+assets/js/startup.js           # startup mobile nav and accessible workflow tabs
+assets/img/esen-mark.svg       # startup favicon
+assets/img/esen-social.png     # startup social preview
+assets/img/esen-social.svg     # editable vector source for the social preview
 assets/img/                   # logo, profile photo, social card (og-card.png), project figures
 assets/pdf/Esen_CV.pdf        # downloadable CV
 robots.txt, sitemap.xml       # SEO; update sitemap.xml when adding pages
@@ -43,8 +50,49 @@ When adding a new top-level file or folder, add it to that workflow too.
 
 ## Editing content
 
-- Homepage content lives in `index.html`; project details live in
+- Startup content lives in `index.html`; personal content lives in
+  `personal.html`; project details live in
   `projects/<slug>/index.html`.
 - Replace `assets/pdf/Esen_CV.pdf` to refresh the downloadable CV.
 - Canonical URLs, Open Graph tags and structured data use
   `https://oguzhanesen.com`; keep them in sync if the domain changes.
+
+## Startup page and application
+
+- Startup: **Esen Robotics**. Founder: **Oguzhan Esen**.
+- Business contact: **oguz@oguzhanesen.com**, supplied by the founder. Confirm
+  that the mailbox receives mail before submitting an application.
+- The founder section explains why the venture uses `oguzhanesen.com`.
+- Product copy describes an early-stage direction: a robot-learning workspace
+  for demonstrations, reusable manipulation skills, and policy evaluation.
+  This proposed positioning should be reviewed by the founder before publishing.
+- Claude integration is explicitly planned, rather than represented as shipped.
+  The interactive hero is an illustration, not a functioning robotics product.
+- Research links point to the founder's existing work. No funding, revenue,
+  customer, incorporation, or program-acceptance claims are made.
+- The program's published FAQ asks for a company email matching the website
+  domain. It does not say the domain must match the startup's brand name.
+  See https://claude.com/programs/startups for current requirements.
+
+## Preserve and restore the personal homepage
+
+The personal-site baseline is commit
+`678b003ea7eea3ec9eee7e30448d4db405d9cb32`, bookmarked locally as
+`personal-site-before-startup-2026-10-08`. Startup work is on
+`codex/robot-learning-startup`; creating this branch does not publish the site.
+
+After the startup work has been committed and integrated into `main`, restore
+the original homepage without deleting history:
+
+```bash
+git switch main
+git restore --source=678b003ea7eea3ec9eee7e30448d4db405d9cb32 -- index.html
+git commit -m "Restore personal homepage"
+git push origin main
+```
+
+Save/commit any work you want to keep before switching branches. This preserves
+Git history and leaves the startup work available for reuse. The extra startup
+assets and `/personal.html` can remain without affecting the personal homepage.
+To undo the entire startup change after it has been committed and merged, revert
+the startup commit instead. Avoid resetting or force-pushing shared history.
